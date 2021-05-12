@@ -17,6 +17,7 @@ class GroupCustomButton extends StatelessWidget {
     this.unselectedShadow,
     this.height,
     this.width,
+    this.alignment,
   }) : super(key: key);
 
   final String text;
@@ -33,6 +34,7 @@ class GroupCustomButton extends StatelessWidget {
   final List<BoxShadow>? unselectedShadow;
   final double? height;
   final double? width;
+  final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +48,20 @@ class GroupCustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all<double>(0.0),
-          backgroundColor: isSelected
-              ? MaterialStateProperty.all<Color?>(selectedColor)
-              : MaterialStateProperty.all<Color?>(unselectedColor),
-          shape: MaterialStateProperty.all<OutlinedBorder>(
-            RoundedRectangleBorder(
-              borderRadius: borderRadius ?? BorderRadius.circular(30),
-              side: BorderSide(
-                color: isSelected ? selectedBorderColor : unselectedBorderColor,
+            elevation: MaterialStateProperty.all<double>(0.0),
+            backgroundColor: isSelected
+                ? MaterialStateProperty.all<Color?>(selectedColor)
+                : MaterialStateProperty.all<Color?>(unselectedColor),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              RoundedRectangleBorder(
+                borderRadius: borderRadius ?? BorderRadius.circular(30),
+                side: BorderSide(
+                  color:
+                      isSelected ? selectedBorderColor : unselectedBorderColor,
+                ),
               ),
             ),
-          ),
-        ),
+            alignment: alignment),
         child: Text(
           text,
           style: isSelected ? selectedTextStyle : unselectedTextStyle,

@@ -25,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Axis direction = Axis.horizontal;
+  Axis direction = Axis.vertical;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(10.0),
               child: Center(
                 child: GroupButton(
+                  buttonWidth: 100,
                   spacing: 10,
                   direction: direction,
                   onSelected: (index, isSelected) =>
@@ -61,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     "21:40",
                   ],
                   selectedButtons: ["18:00"],
+                  alignment: Alignment.centerRight,
                 ),
               ),
             ),

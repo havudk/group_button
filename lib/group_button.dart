@@ -64,6 +64,9 @@ class GroupButton extends StatelessWidget {
   /// Width of group button
   final double? buttonWidth;
 
+  /// Text Alignment
+  final Alignment? alignment;
+
   const GroupButton({
     Key? key,
     required this.buttons,
@@ -83,6 +86,7 @@ class GroupButton extends StatelessWidget {
     this.unselectedShadow = _defaultShadow,
     this.buttonHeight,
     this.buttonWidth,
+    this.alignment,
   })  : assert(
           !isRadio || selectedButtons == null || selectedButtons.length <= 1,
           "When isRadio=true, selectedButtons can't contain multiple buttons.",
@@ -111,6 +115,7 @@ class GroupButton extends StatelessWidget {
         unselectedShadow: unselectedShadow,
         buttonWidth: buttonWidth,
         buttonHeigth: buttonHeight,
+        alignment: alignment,
       ),
     );
   }
