@@ -18,6 +18,7 @@ class GroupCustomButton extends StatelessWidget {
     this.height,
     this.width,
     this.alignment,
+    this.margin,
   }) : super(key: key);
 
   final String text;
@@ -34,17 +35,19 @@ class GroupCustomButton extends StatelessWidget {
   final List<BoxShadow>? unselectedShadow;
   final double? height;
   final double? width;
+  final EdgeInsets? margin;
   final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: height,
-      width: width,
+      width: width ?? double.infinity,
       decoration: BoxDecoration(
         borderRadius: borderRadius ?? BorderRadius.circular(30),
         boxShadow: isSelected ? selectedShadow : unselectedShadow,
       ),
+      margin: margin,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(

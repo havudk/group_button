@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(10.0),
               child: Center(
                 child: GroupButton(
-                  buttonWidth: 100,
+                  // buttonWidth: 100,
                   spacing: 10,
                   direction: direction,
                   onSelected: (index, isSelected) =>
@@ -63,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                   selectedButtons: ["18:00"],
                   alignment: Alignment.centerRight,
+                  buttonMargin: EdgeInsets.only(bottom: 10),
                 ),
               ),
             ),

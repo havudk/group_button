@@ -25,6 +25,7 @@ class GroupButtonBody extends StatelessWidget {
     this.buttonWidth,
     this.buttonHeigth,
     this.alignment,
+    this.buttonMargin,
   }) : super(key: key);
 
   final List<String> buttons;
@@ -44,6 +45,7 @@ class GroupButtonBody extends StatelessWidget {
   final List<BoxShadow> unselectedShadow;
   final double? buttonWidth;
   final double? buttonHeigth;
+  final EdgeInsets? buttonMargin;
   final Alignment? alignment;
 
   @override
@@ -52,10 +54,11 @@ class GroupButtonBody extends StatelessWidget {
 
     bloc.initializeSelection(buttons, selectedButtons);
 
-    return Wrap(
-      direction: direction ?? Axis.horizontal,
-      spacing: spacing,
-      runSpacing: spacing,
+    return Column(
+      // direction: direction ?? Axis.horizontal,
+      // spacing: spacing,
+      // runSpacing: spacing,
+
       children: _buildButtonsList(buttons, bloc),
     );
   }
@@ -94,6 +97,7 @@ class GroupButtonBody extends StatelessWidget {
         unselectedShadow: unselectedShadow,
         height: buttonHeigth,
         width: buttonWidth,
+        margin: buttonMargin,
         alignment: alignment,
       );
       rebuildedButtons.add(rebuidedButton);
