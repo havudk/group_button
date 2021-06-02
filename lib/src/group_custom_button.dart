@@ -41,7 +41,8 @@ class GroupCustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
+      constraints: const BoxConstraints(minHeight: 50),
+      // height: height,
       width: width ?? double.infinity,
       decoration: BoxDecoration(
         borderRadius: borderRadius ?? BorderRadius.circular(30),
