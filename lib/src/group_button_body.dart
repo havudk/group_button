@@ -89,7 +89,8 @@ class GroupButtonBody extends StatelessWidget {
         selectedTextStyle: selectedTextStyle,
         unselectedTextStyle: unselectedTextStyle,
         selectedColor: selectedColor,
-        unselectedColor: unselectedColor,
+        unselectedColor:
+            (i == buttons.length - 1) ? Colors.grey[100] : unselectedColor,
         selectedBorderColor: selectedBorderColor,
         unselectedBorderColor: unselectedBorderColor,
         borderRadius: borderRadius,
