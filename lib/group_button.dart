@@ -24,6 +24,8 @@ class GroupButton extends StatelessWidget {
   /// if the [isRadio] = false, you can select several at once
   final bool isRadio;
 
+  final bool isChangeColorInLast;
+
   /// The direction of arrangement of the buttons in [GroupButton]
   final Axis? direction;
 
@@ -75,6 +77,7 @@ class GroupButton extends StatelessWidget {
     required this.onSelected,
     this.selectedButtons,
     this.isRadio = true,
+    this.isChangeColorInLast = true,
     this.direction,
     this.spacing = 0,
     this.selectedTextStyle = _defaultSelectedTextStyle,
@@ -105,6 +108,7 @@ class GroupButton extends StatelessWidget {
         selectedButtons: selectedButtons,
         onSelected: onSelected,
         isRadio: isRadio,
+        isChangeColorInLast: isChangeColorInLast,
         direction: direction,
         spacing: spacing,
         selectedTextStyle: selectedTextStyle,
