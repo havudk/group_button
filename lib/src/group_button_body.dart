@@ -11,6 +11,7 @@ class GroupButtonBody extends StatelessWidget {
     this.selectedButtons,
     required this.onSelected,
     this.isRadio,
+    this.isChangeColorInLast = true,
     this.direction,
     this.spacing = 0.0,
     this.selectedTextStyle,
@@ -32,6 +33,7 @@ class GroupButtonBody extends StatelessWidget {
   final List<String>? selectedButtons;
   final Function(int, bool) onSelected;
   final bool? isRadio;
+  final bool isChangeColorInLast;
   final Axis? direction;
   final double spacing;
   final TextStyle? selectedTextStyle;
@@ -89,8 +91,9 @@ class GroupButtonBody extends StatelessWidget {
         selectedTextStyle: selectedTextStyle,
         unselectedTextStyle: unselectedTextStyle,
         selectedColor: selectedColor,
-        unselectedColor:
-            (i == buttons.length - 1) ? Colors.grey[100] : unselectedColor,
+        unselectedColor: (isChangeColorInLast && i == buttons.length - 1)
+            ? Colors.grey[100]
+            : unselectedColor,
         selectedBorderColor: selectedBorderColor,
         unselectedBorderColor: unselectedBorderColor,
         borderRadius: borderRadius,
